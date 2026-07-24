@@ -39,6 +39,15 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        langchange {
+            bindings = <&kp LG(SPACE)>;
+            key-positions = <50 59>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
