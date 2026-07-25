@@ -63,6 +63,11 @@
             bindings = <&kp LG(SPACE)>;
             key-positions = <50 59>;
         };
+
+        togglemouse {
+            bindings = <&tog 4>;
+            key-positions = <42 43>;
+        };
     };
 
     keymap {
@@ -159,7 +164,7 @@
                 &trans  &trans  &trans  &none  &mkp LCLK    &mkp RCLK  &none  &none  &kp KP_NUMBER_0  &kp KP_DOT
             >;
 
-            label = "Mouse";
+            label = "mouse";
             sensor-bindings = <&rm_behavior>, <&lm_behavior>;
         };
     };
