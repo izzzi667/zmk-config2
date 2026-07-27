@@ -5,10 +5,12 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/rgb.h>
 
 #define BASE 0
 #define LOWER 1
@@ -40,6 +42,24 @@
             label = "LM_BEHAVIOR";
             #sensor-binding-cells = <0>;
             bindings = <&mmv MOVE_UP>, <&mmv MOVE_DOWN>;
+
+            tap-ms = <150>;
+        };
+
+        rgb_bright_behavior: rgb_bright_behavior {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "RGB_BRIGHT_BEHAVIOR";
+            #sensor-binding-cells = <0>;
+            bindings = <&rgb_ug RGB_BRI>, <&rgb_ug RGB_BRD>;
+
+            tap-ms = <150>;
+        };
+
+        bl_bright_behavior: bl_bright_behavior {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "BL_BRIGHT_BEHAVIOR";
+            #sensor-binding-cells = <0>;
+            bindings = <&bl BL_DEC>, <&bl BL_INC>;
 
             tap-ms = <150>;
         };
@@ -158,12 +178,14 @@
 
             display-name = "adjust";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &out OUT_TOG                  &none           &none           &none         &none            &none  &bt BT_CLR
-&none         &none         &none         &none         &none         &none                         &none           &mkp LCLK       &mkp RCLK     &none            &none  &none
-&none         &none         &none         &none         &none         &none                         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none  &none
-&none         &none         &none         &none         &none         &none         &none    &none  &none           &none           &none         &none            &none  &none
-                            &none         &none         &none         &none         &none    &none  &none           &none           &none         &none
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &out OUT_TOG                                    &none           &none           &none         &none            &none  &bt BT_CLR
+&none         &none         &none         &none         &none         &none                                           &none           &mkp LCLK       &mkp RCLK     &none            &none  &none
+&none         &none         &none         &none         &none         &none                                           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none  &none
+&none         &none         &none         &none         &none         &rgb_ug RGB_EFF  &rgb_ug RGB_TOG    &bl BL_TOG  &none           &none           &none         &none            &none  &none
+                            &none         &none         &none         &none            &none              &none       &none           &none           &none         &none
             >;
+
+            sensor-bindings = <&rgb_bright_behavior>, <&bl_bright_behavior>;
         };
 
         mouse_layer {
