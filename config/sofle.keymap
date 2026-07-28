@@ -158,8 +158,8 @@
             bindings = <
 &trans  &trans      &trans     &trans       &trans       &trans                           &trans          &trans          &trans        &kp MINUS  &kp PLUS       &kp DELETE
 &trans  &kp INS     &kp PSCRN  &kp K_CMENU  &trans       &trans                           &trans          &trans          &trans        &trans     &trans         &kp RIGHT_BRACKET
-&trans  &kp LALT    &kp LCTRL  &kp LSHFT    &trans       &kp CLCK                         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &kp PAGE_UP    &trans
-&trans  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &caps_word  &trans    &kp ENTER  &trans          &trans          &kp HOME      &kp END    &kp PAGE_DOWN  &trans
+&trans  &kp LALT    &kp LCTRL  &kp LSHFT    &trans       &kp CLCK                         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT  &trans         &trans
+&trans  &kp K_UNDO  &kp K_CUT  &kp K_COPY   &kp K_PASTE  &caps_word  &trans    &kp ENTER  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END    &kp BACKSLASH  &trans
                     &trans     &trans       &trans       &trans      &trans    &trans     &trans          &trans          &trans        &trans
             >;
 
