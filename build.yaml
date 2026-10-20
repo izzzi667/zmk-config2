@@ -24,3 +24,8 @@ include:
     shield: sofle_left nice_oled
   - board: nice_nano_v2
     shield: sofle_right nice_oled
+  # One-shot firmware to wipe saved settings (RGB state, ext power, bonds).
+  # Flash once to a half after changing *_START defaults if they seem ignored.
+  - board: nice_nano_v2
+    shield: settings_reset
+    artifact-name: settings_reset
